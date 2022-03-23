@@ -10,7 +10,7 @@ import { getCommentsAction } from "../redux/actions/getCommentsAction";
 import Loader from "./Loader";
 
 interface CommentContainerProps {
-  comment: Comment;
+  comment: Comment; //comments
 }
 
 export default function CommentContainer({ comment }: CommentContainerProps) {
