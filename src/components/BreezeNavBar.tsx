@@ -77,7 +77,7 @@ export default function BreezeNavBar() {
              authorizationHeader.config.headers.Authorization ? 
             <Link
             className={
-              // pathName === "/logout" ? "nav-link active-page" : 
+               
               "nav-link"
             }
             to="/login"
