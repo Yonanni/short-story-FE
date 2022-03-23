@@ -2,9 +2,12 @@ import { Navbar, Container, Nav, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { GiRollingDices } from "react-icons/gi";
 import { useLocation } from "react-router-dom";
+import { ReduxStore } from "../typings/ReduxStore";
+import { useSelector } from "react-redux";
 
 export default function BreezeNavBar() {
   const pathName = useLocation().pathname;
+  const me = useSelector((state: ReduxStore) => state.me);
 
   return (
     <Navbar id="breeze-navbar" className="background-gradient" expand="lg">
@@ -60,7 +63,9 @@ export default function BreezeNavBar() {
             </Link>
           </Nav>
           <Nav className="justify-content-end">
-            <Link
+            {!me &&
+              <>
+              <Link
               className={
                 pathName === "/login" ? "nav-link active-page" : "nav-link"
               }
@@ -76,6 +81,8 @@ export default function BreezeNavBar() {
             >
               Register
             </Link>
+              </>
+            }
           </Nav>
         </Navbar.Collapse>
       </Container>
