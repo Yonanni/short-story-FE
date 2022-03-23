@@ -1,13 +1,23 @@
 import { Navbar, Container, Nav, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { GiRollingDices } from "react-icons/gi";
 import { useLocation } from "react-router-dom";
 import { ReduxStore } from "../typings/ReduxStore";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutAction } from "../redux/actions/logoutAction";
 
 export default function BreezeNavBar() {
   const pathName = useLocation().pathname;
-  const me = useSelector((state: ReduxStore) => state.me);
+  const authorizationHeader = useSelector(
+    (state: ReduxStore) => state.authorizationHeader
+  );
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const logout = () => {
+    dispatch(logoutAction());
+    history.push("/login");
+  };
 
   return (
     <Navbar id="breeze-navbar" className="background-gradient" expand="lg">
@@ -63,7 +73,18 @@ export default function BreezeNavBar() {
             </Link>
           </Nav>
           <Nav className="justify-content-end">
-            {!me &&
+            {
+             authorizationHeader.config.headers.Authorization ? 
+            <Link
+            className={
+              // pathName === "/logout" ? "nav-link active-page" : 
+              "nav-link"
+            }
+            to="/login"
+            onClick={logout}
+          >
+            Logout
+          </Link> :
               <>
               <Link
               className={
@@ -81,7 +102,7 @@ export default function BreezeNavBar() {
             >
               Register
             </Link>
-              </>
+             </>
             }
           </Nav>
         </Navbar.Collapse>
