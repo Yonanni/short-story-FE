@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap");
+/*Globals*/
+:root {
+  --brownish: #6a4f40;
+  --darkBrown: #4e3e36;
+}
+
+.background-gradient {
+  background: rgb(217, 161, 4) !important;
+  background: linear-gradient(
+    153deg,
+    rgba(217, 161, 4, 1) 3%,
+    rgba(244, 227, 191, 1) 63%
+  ) !important;
+}
+
+h1 {
+  font-family: "Merienda", cursive !important;
+  font-weight: bold !important;
+  font-size: 4rem !important;
+  text-shadow: 2px 2px azure !important;
+}
+
+h2 {
+  font-family: "Merienda", cursive !important;
+  font-size: 2.5rem !important;
+  font-weight: bold !important;
+  text-shadow: 2px 2px gray !important;
+}
+
+.general-container {
+  border-radius: 10px !important;
+  background-color: whitesmoke !important;
+}
+
+.btn  {
+  color: var(--brownish) !important;
+}
+/* Breeze Nav bar*/
+#breeze-navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  font-size: 1.2rem;
+  z-index: 9;
+}
+
+#breeze-navbar a {
+  color: var(--brownish);
+}
+
+.active-page {
+  font-weight: bolder;
+  text-shadow: 2px 2px azure;
+}
+
+/*Main container*/
+#main-container {
+  margin-top: 10rem;
+}
+
+/*Hero*/
+#hero {
+  margin-top: -5rem;
+  position: relative;
+}
+
+#hero .hero-text {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  z-index: 8;
+  color: var(--darkBrown);
+}
+
+#hero .hero-text p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/*Story container*/
+
+.story-container .hearts-comments {
+  cursor: pointer;
+}
+
+/*Author info*/
+.author-info {
+  cursor: pointer;
+}
+
+.author-info .author-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/*Presentation panel*/
+
+.presentation-panel .info {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.presentation-panel h2 {
+  font-size: 2rem !important;
+}
+
+/*My Stories*/
+
+.my-stories button {
+  font-size: 1.5rem;
+}
+
+/* comments */
+
+.comments {
+  background-color: rgb(203 222 255) !important;
+}
