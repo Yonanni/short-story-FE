@@ -1,4 +1,5 @@
 import Hero from "../components/Hero";
+import CurrentUser from "../context/CurrentUser";
 import StoryContainer from "../components/StoryContainer";
 import Loader from "../components/Loader";
 import {
@@ -32,7 +33,9 @@ export default function HomePage() {
   }, []);
   return (
     <div>
+      <CurrentUser>
       <Hero />
+      </CurrentUser>
       <Container>
         <Form onSubmit={onSearch}>
           <Row className="general-container p-4 mb-4">
