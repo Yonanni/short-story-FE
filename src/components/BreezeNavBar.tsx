@@ -6,11 +6,15 @@ import { ReduxStore } from "../typings/ReduxStore";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutAction } from "../redux/actions/logoutAction";
 
+
+
 export default function BreezeNavBar() {
   const pathName = useLocation().pathname;
   const authorizationHeader = useSelector(
     (state: ReduxStore) => state.authorizationHeader
   );
+  
+  
 
   const dispatch = useDispatch();
   const history = useHistory();
